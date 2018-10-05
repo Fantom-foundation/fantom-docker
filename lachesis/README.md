@@ -7,7 +7,7 @@ lachesis builder
   - [jq](https://stedolan.github.io/jq)
   - [batch-ethkey](https://github.com/SamuelMarks/batch-ethkey)
   - [upx](https://upx.github.io), download [upx-3.95-amd64_linux.tar.xz](https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz) and extract `upx` binary into this dir
-  - glider base image (found here, at: [/glider/Dockerfile](https://github.com/Fantom-foundation/fantom-docker/master/glider/Dockerfile))
+  - [glider base image](/glider/Dockerfile)
 
 ## Generate private & public keys, and peers.json
 
