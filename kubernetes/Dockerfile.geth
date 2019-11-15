@@ -1,0 +1,8 @@
+FROM alpine as geth
+RUN apk add --no-cache ca-certificates
+RUN mkdir /shared
+COPY getip.sh /bin/getip.sh
+ADD https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.9.7-a718daa6.tar.gz .
+
+EXPOSE 8545 8546 8547 30303 30303/udp
+ENTRYPOINT [ "/bin/sh", "-c", "/geth --bootnodes=`cat /shared/enode-url` --rpcaddr 0.0.0.0"]

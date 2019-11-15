@@ -1,0 +1,4 @@
+FROM geth as bootnode
+EXPOSE 8545 8546 8547 30303 30303/udp 30301
+ENTRYPOINT [ "/bin/sh", "-c", "/bootnode --genkey=boot.key && echo 'enode://' > /shared/enode-url && /bootnode --nodekey=boot.key --writeaddress >> /shared/enode-address && echo '@' >> /shared/enode-url && getip.sh >> /shared/enode-url && echo ':30301' >> /shared/enode-url && /bootnode --nodekey=boot.key" ]
+
